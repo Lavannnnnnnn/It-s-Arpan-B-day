@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Arpan 🎉</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+body {
+  background: #111;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  padding-top: 100px;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="question">Arpan… are you the best defender ever? 🛡️😏</h1>
+
+<button onclick="nextQ('yes')">YES 😌</button>
+<button onclick="nextQ('no')">NO 😭</button>
+
+<script>
+let step = 0;
+
+function nextQ(answer) {
+  step++;
+
+  if (step === 1) {
+    document.getElementById("question").innerText =
+      answer === "yes"
+      ? "Confidence I like 😏. But tell me… do you miss easy passes? 😂"
+      : "Liar detected 😭. Now be honest… do you miss easy passes?";
+
+  } else if (step === 2) {
+    document.getElementById("question").innerText =
+      "Final question Arpan… is today YOUR day? 🎂👀";
+
+  } else {
+    document.body.innerHTML = `
+      <h1>🎉 HAPPIEST BIRTHDAY ARPAN 🎉</h1>
+      <p>To my favorite defender 🛡️⚽</p>
+      <p>You block goals, clear problems…</p>
+      <p>and still manage to be annoyingly cute 🙄</p>
+      <p>Stay strong, keep winning & don’t miss passes pls 😭</p>
+      <p>– from your #1 supporter 🫶</p>
+    `;
+
+    confetti({
+      particleCount: 250,
+      spread: 120
+    });
+  }
+}
+</script>
+
+</body>
+</html>
